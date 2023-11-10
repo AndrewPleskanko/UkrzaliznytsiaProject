@@ -16,24 +16,31 @@ import java.util.List;
 @Component
 public class DefaultDataConfig {
 
-    @Autowired
     private IUserService userService;
+
+    private final PasswordEncoder passwordEncoder;
+
+    @Autowired
+    public DefaultDataConfig(IUserService userService, PasswordEncoder passwordEncoder) {
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @PostConstruct
     public void createDefaultUsers() {
-        User john = User.builder().username("john").password("123").email("john@gmail.com").build();
+        User john = User.builder().username("john").password(passwordEncoder.encode("123")).email("john@gmail.com").build();
         userService.createUser(john);
 
-        User jane = User.builder().username("jane").password("123").email("jane@gmail.com").build();
+        User jane = User.builder().username("jane").password(passwordEncoder.encode("123")).email("jane@gmail.com").build();
         userService.createUser(jane);
 
-        User admin = User.builder().email("abdul@gmail.com").username("admin").password("admin").roles(new HashSet<>(Arrays.asList(Role.ADMIN))).build();
+        User admin = User.builder().email("abdul@gmail.com").username("admin").password(passwordEncoder.encode("admin")).roles(new HashSet<>(Arrays.asList(Role.ADMIN))).build();
         userService.createUser(admin);
 
-        User moder = User.builder().email("allax@gmail.com").username("moder").password("moder").roles(new HashSet<>(Arrays.asList(Role.MODERATOR))).build();
+        User moder = User.builder().email("allax@gmail.com").username("moder").password(passwordEncoder.encode("moder")).roles(new HashSet<>(Arrays.asList(Role.MODERATOR))).build();
         userService.createUser(moder);
 
-        User umoderator = User.builder().email("gg@gmail.com").username("umoderator").password("12345").roles(new HashSet<>(Arrays.asList(Role.ADMIN, Role.MODERATOR))).build();
+        User umoderator = User.builder().email("gg@gmail.com").username("umoderator").password(passwordEncoder.encode("12345")).roles(new HashSet<>(Arrays.asList(Role.ADMIN, Role.MODERATOR))).build();
         userService.createUser(umoderator);
     }
 }

@@ -16,12 +16,12 @@ public class AuthenticationProviderImplementation implements AuthenticationProvi
     private static final Logger logger = LogManager.getLogger();
 
     private final UserDetailsServiceImplementation userDetailsService;
-  //  private final PasswordEncoder passwordEncoder;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public AuthenticationProviderImplementation(UserDetailsServiceImplementation userDetailsService) {
+    public AuthenticationProviderImplementation(UserDetailsServiceImplementation userDetailsService, PasswordEncoder passwordEncoder) {
         this.userDetailsService = userDetailsService;
-      //  this.passwordEncoder = passwordEncoder;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class AuthenticationProviderImplementation implements AuthenticationProvi
             throw new AuthenticationCredentialsNotFoundException("No such user was found");
         }
 
-        if (user.getPassword().equals(password)) {
+        if (passwordEncoder.matches(password, user.getPassword())) {
             return new UsernamePasswordAuthenticationToken(user, authentication.getCredentials(), user.getAuthorities());
         } else {
             throw new AuthenticationServiceException("Unable authenticate user due to some problems");

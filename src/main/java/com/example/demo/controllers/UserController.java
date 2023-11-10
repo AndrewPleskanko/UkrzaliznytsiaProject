@@ -13,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
 @Controller
 @RequestMapping(value = "/")
 @AllArgsConstructor
@@ -27,15 +28,9 @@ public class UserController {
         return model;
     }
 
-    @GetMapping("/login")
-    public String signInPage(Model model, String error, String logout) {
-        if (logout != null) {
-            model.addAttribute("logout", true);
-        }
-        if (error != null) {
-            model.addAttribute("error", true);
-        }
-        return "login"; // Змінено на "login"
+    @GetMapping("/main-page")
+    public String showMainPage() {
+        return "mainPage";
     }
 
     @PostMapping(value = "/signup")
