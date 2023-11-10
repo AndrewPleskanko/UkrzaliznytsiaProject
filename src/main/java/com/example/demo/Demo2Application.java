@@ -7,8 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 
 @SpringBootApplication
+@EnableWebSecurity
 public class Demo2Application {
     private final EmailSenderService senderService;
     @Value("${email.message.to}")
@@ -27,10 +29,10 @@ public class Demo2Application {
         SpringApplication.run(Demo2Application.class, args);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
+  /*  @EventListener(ApplicationReadyEvent.class)
     public void triggerMail() {
         senderService.sendSimpleEmail(toEmail,
                 subject,
                 body);
-    }
+    }*/
 }

@@ -1,5 +1,8 @@
 package com.example.demo.config;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +13,8 @@ import java.util.Properties;
 
 @Configuration
 public class MailConfiguration {
+    private static final Logger logger = LogManager.getLogger();
+
     @Value("${spring.mail.host}")
     private String host;
 
@@ -38,7 +43,7 @@ public class MailConfiguration {
         props.put("mail.transport.protocol", protocol);
         props.put("mail.smtp.starttls.enable", "true");
 
-
+        logger.info("JavaMailSender initialized.");
         return mailSender;
     }
 

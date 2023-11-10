@@ -1,39 +1,46 @@
-header {
-    min-height: 75px;
-    background-color: #202536;
+.company-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px 0 rgba(159, 177, 188, 0.4);
+    margin: 1.5rem 0;
+    padding: 2.5rem;
+    height: 289px;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
-a.main-logo-link {
-    text-decoration: none;
-    color: white;
+.box-label {
+    color: black;
+    font-weight: bold;
+    font-size: .75rem;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    flex: 0 0 40%;
 }
 
-a.main-logo-link:hover {
-    text-decoration: none;
-    color: white;
+body {
+    background: #f3fbff 50%;
 }
 
-.row {
-    min-height: 713px;
+.sign-up--form {
+    margin: 7.5rem 31%;
 }
 
-#left_col_main {
-    background-image: url("../images/main_background_pizza.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.invalid-input {
+    color: #cb4846;
+    font-size: .75rem;
 }
 
-#user_profile_pic {
-    background-image: url("../images/user-profile.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+.pad {
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
-#admin_profile_pic {
-    background-image: url("../images/admin_page.jpg");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+table.center {
+    margin-left:auto;
+    margin-right:auto;
 }
 
-
-
+.block-m-top-15 {
+    margin-top: 15rem !important;
+}
