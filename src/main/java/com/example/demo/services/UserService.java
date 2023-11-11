@@ -7,10 +7,10 @@ import com.example.demo.repositories.UserRepository;
 import com.example.demo.entity.User;
 import com.example.demo.services.interfaces.IUserService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -20,7 +20,8 @@ import java.util.List;
 @AllArgsConstructor
 public class UserService implements IUserService {
 
-    @Autowired
+    private static final Logger logger = LogManager.getLogger();
+
     private UserRepository userRepository;
 
 

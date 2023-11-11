@@ -1,4 +1,4 @@
-package com.example.demo.security.config;
+package com.example.demo.security;
 
 
 import org.apache.logging.log4j.LogManager;

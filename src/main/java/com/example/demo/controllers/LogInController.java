@@ -1,6 +1,6 @@
 package com.example.demo.controllers;
 
-import com.example.demo.security.config.AuthenticationProviderImplementation;
+import com.example.demo.security.AuthenticationProviderImplementation;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-public class LoginController {
+public class LogInController {
 
     private final AuthenticationProviderImplementation authenticationProvider;
 
     @Autowired
-    public LoginController(AuthenticationProviderImplementation authenticationProvider) {
+    public LogInController(AuthenticationProviderImplementation authenticationProvider) {
         this.authenticationProvider = authenticationProvider;
     }
 
