@@ -8,6 +8,7 @@ class Demo2ApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("resdy");
     }
 
 }

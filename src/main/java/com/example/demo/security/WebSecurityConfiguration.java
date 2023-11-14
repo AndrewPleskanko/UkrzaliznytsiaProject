@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
 @Configuration
 public class WebSecurityConfiguration {
@@ -30,7 +32,7 @@ public class WebSecurityConfiguration {
                 .formLogin(
                         login -> login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/main-page")
+                        .successHandler(successHandler())
                         .permitAll()
                 )
                 .logout(logout -> logout
@@ -43,6 +45,13 @@ public class WebSecurityConfiguration {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
+    }
+
+    @Bean
+    public AuthenticationSuccessHandler successHandler() {
+        SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();
+        handler.setDefaultTargetUrl("/main-page");
+        return handler;
     }
 
     @Bean

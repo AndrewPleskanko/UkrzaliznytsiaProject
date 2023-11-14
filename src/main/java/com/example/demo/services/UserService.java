@@ -9,11 +9,11 @@ import com.example.demo.services.interfaces.IUserService;
 import lombok.AllArgsConstructor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+
+import java.util.*;
 
 
 @Service
@@ -23,23 +23,13 @@ public class UserService implements IUserService {
     private static final Logger logger = LogManager.getLogger();
 
     private UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
 
     @Override
     @Transactional
     public boolean userExist(String username) {
         return userRepository.findByUsername(username).isPresent();
-    }
-
-    @Override
-    @Transactional
-    public void createUser(User user) {
-
-        if (user.getRoles() == null) {
-            user.setRoles(new HashSet<>(Arrays.asList(Role.USER)));
-        }
-
-        userRepository.save(user);
     }
 
     @Override
@@ -56,7 +46,15 @@ public class UserService implements IUserService {
 
     @Transactional
     public void saveUser(UserSignUpRequest request) {
-        User user = UserMapper.mapUserRequest2User(request);
+        User user = new User();
+        user.setUsername(request.getUsername());
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        Set<Role> roles = request.getRoleList();
+        if (roles == null || roles.isEmpty()) {
+            roles = new HashSet<>(Collections.singletonList(Role.USER));
+        }
+        user.setRoles(roles);
         userRepository.save(user);
     }
 }

@@ -6,7 +6,6 @@ import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,18 +30,10 @@ public class SignUpController {
                                  ModelAndView model) {
         if (bindingResult.hasErrors()) {
             model.setViewName("signUp");
-            bindingResult.addError(validatePassword(userSignUpRequest));
             return model;
         }
         userService.saveUser(userSignUpRequest);
         model.setViewName("index");
         return model;
-    }
-
-    private ObjectError validatePassword(UserSignUpRequest request) {
-        if (!request.getPassword().equals(request.getConfirmPassword())) {
-            return new ObjectError("UserSignUpRequest", "Confirm password doesn't match");
-        }
-        return null;
     }
 }

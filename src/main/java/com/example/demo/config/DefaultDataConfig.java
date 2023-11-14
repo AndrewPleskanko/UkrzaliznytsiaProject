@@ -1,46 +1,62 @@
 package com.example.demo.config;
 
 
+import com.example.demo.dto.UserSignUpRequest;
 import com.example.demo.entity.Role;
-import com.example.demo.entity.User;
 import com.example.demo.services.interfaces.IUserService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class DefaultDataConfig {
 
     private IUserService userService;
 
-    private final PasswordEncoder passwordEncoder;
-
     @Autowired
-    public DefaultDataConfig(IUserService userService, PasswordEncoder passwordEncoder) {
+    public DefaultDataConfig(IUserService userService) {
         this.userService = userService;
-        this.passwordEncoder = passwordEncoder;
     }
 
     @PostConstruct
     public void createDefaultUsers() {
-        User john = User.builder().username("john").password(passwordEncoder.encode("123")).email("john@gmail.com").build();
-        userService.createUser(john);
+        UserSignUpRequest johnRequest = new UserSignUpRequest();
+        johnRequest.setUsername("john");
+        johnRequest.setPassword("123");
+        johnRequest.setEmail("john@gmail.com");
+        userService.saveUser(johnRequest);
 
-        User jane = User.builder().username("jane").password(passwordEncoder.encode("123")).email("jane@gmail.com").build();
-        userService.createUser(jane);
+        UserSignUpRequest janeRequest = new UserSignUpRequest();
+        janeRequest.setUsername("jane");
+        janeRequest.setPassword("123");
+        janeRequest.setEmail("jane@gmail.com");
+        userService.saveUser(janeRequest);
 
-        User admin = User.builder().email("abdul@gmail.com").username("admin").password(passwordEncoder.encode("admin")).roles(new HashSet<>(Arrays.asList(Role.ADMIN))).build();
-        userService.createUser(admin);
+        UserSignUpRequest adminRequest = new UserSignUpRequest();
+        adminRequest.setUsername("admin");
+        adminRequest.setPassword("admin");
+        adminRequest.setEmail("abdul@gmail.com");
+        adminRequest.setRoleList(new HashSet<>(Arrays.asList(Role.ADMIN)));
+        userService.saveUser(adminRequest);
 
-        User moder = User.builder().email("allax@gmail.com").username("moder").password(passwordEncoder.encode("moder")).roles(new HashSet<>(Arrays.asList(Role.MODERATOR))).build();
-        userService.createUser(moder);
+        UserSignUpRequest moderRequest = new UserSignUpRequest();
+        moderRequest.setUsername("moder");
+        moderRequest.setPassword("moder");
+        moderRequest.setEmail("allax@gmail.com");
+        moderRequest.setRoleList(new HashSet<>(Arrays.asList(Role.MODERATOR)));
+        userService.saveUser(moderRequest);
 
-        User umoderator = User.builder().email("gg@gmail.com").username("umoderator").password(passwordEncoder.encode("12345")).roles(new HashSet<>(Arrays.asList(Role.ADMIN, Role.MODERATOR))).build();
-        userService.createUser(umoderator);
+        UserSignUpRequest umoderatorRequest = new UserSignUpRequest();
+        umoderatorRequest.setUsername("umoderator");
+        umoderatorRequest.setPassword("12345");
+        umoderatorRequest.setEmail("gg@gmail.com");
+        umoderatorRequest.setRoleList(new HashSet<>(Arrays.asList(Role.ADMIN, Role.MODERATOR)));
+        userService.saveUser(umoderatorRequest);
     }
 }
 
