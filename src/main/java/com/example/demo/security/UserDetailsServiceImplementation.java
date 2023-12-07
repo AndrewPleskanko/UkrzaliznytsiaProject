@@ -46,39 +46,4 @@ public class UserDetailsServiceImplementation implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), grantedAuthorities);
     }
 
-   /* public String signUpUser(User user) {
-        boolean userExists = appUserRepository
-                .findByEmail(user.getEmail())
-                .isPresent();
-
-        if (userExists) {
-            // TODO check of attributes are the same and
-            // TODO if email not confirmed send confirmation email.
-
-            throw new IllegalStateException("email already taken");
-        }
-
-        String encodedPassword = bCryptPasswordEncoder
-                .encode(appUser.getPassword());
-
-        appUser.setPassword(encodedPassword);
-
-        appUserRepository.save(appUser);
-
-        String token = UUID.randomUUID().toString();
-
-        ConfirmationToken confirmationToken = new ConfirmationToken(
-                token,
-                LocalDateTime.now(),
-                LocalDateTime.now().plusMinutes(15),
-                appUser
-        );
-
-        confirmationTokenService.saveConfirmationToken(
-                confirmationToken);
-
-//        TODO: SEND EMAIL
-
-        return token;
-    }*/
 }

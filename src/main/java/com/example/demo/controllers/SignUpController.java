@@ -24,7 +24,7 @@ public class SignUpController {
         return model;
     }
 
-    @PostMapping(value = "/signup")
+    @PostMapping(value = "register")
     public ModelAndView saveUser(@Valid @ModelAttribute UserSignUpRequest userSignUpRequest,
                                  BindingResult bindingResult,
                                  ModelAndView model) {
