@@ -1,0 +1,27 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - deploy
+
+build-job:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+test-job:
+  stage: test
+  script:
+    - npm run test
+
+deploy-job:
+  stage: deploy
+  script:
+    - echo "This job deploys something"
+  environment:
+    name: production

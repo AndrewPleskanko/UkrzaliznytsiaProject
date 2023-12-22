@@ -1,42 +1,42 @@
-2023-12-08T00:07:06.702+02:00  INFO 12948 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-12-08T00:07:06.710+02:00  INFO 12948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-12-08T00:07:06.722+02:00  INFO 12948 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-12-08T00:07:06.985+02:00 ERROR 12948 --- [http-nio-8080-exec-2] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: Full authentication is required to access this resource
-2023-12-08T00:07:07.020+02:00 ERROR 12948 --- [http-nio-8080-exec-2] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: Full authentication is required to access this resource
-2023-12-08T00:27:04.521+02:00  INFO 12948 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-12-08T00:27:04.546+02:00  INFO 12948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-12-08T00:27:05.753+02:00  INFO 12948 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-12-08T00:27:22.483+02:00  INFO 17788 --- [main] com.example.demo.Demo2Application        : Starting Demo2Application using Java 17.0.2 with PID 17788 (C:\Users\legen\Desktop\demo2\target\classes started by Andrew in C:\Users\legen\Desktop\demo2)
-2023-12-08T00:27:22.491+02:00  INFO 17788 --- [main] com.example.demo.Demo2Application        : No active profile set, falling back to 1 default profile: "default"
-2023-12-08T00:27:23.959+02:00  INFO 17788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-12-08T00:27:24.072+02:00  INFO 17788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 1 JPA repository interfaces.
-2023-12-08T00:27:25.166+02:00  INFO 17788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2023-12-08T00:27:25.182+02:00  INFO 17788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-12-08T00:27:25.182+02:00  INFO 17788 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
-2023-12-08T00:27:25.394+02:00  INFO 17788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-12-08T00:27:25.395+02:00  INFO 17788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2734 ms
-2023-12-08T00:27:25.653+02:00  INFO 17788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-12-08T00:27:25.737+02:00  INFO 17788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
-2023-12-08T00:27:25.743+02:00  INFO 17788 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
-2023-12-08T00:27:26.069+02:00  INFO 17788 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-08T00:27:26.363+02:00  INFO 17788 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2023-12-08T00:27:26.399+02:00  INFO 17788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-12-08T00:27:27.114+02:00  INFO 17788 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6befbb12
-2023-12-08T00:27:27.119+02:00  INFO 17788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-12-08T00:27:27.801+02:00  INFO 17788 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
-2023-12-08T00:27:29.219+02:00  INFO 17788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-12-08T00:27:29.281+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-12-08T00:27:29.282+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : відношення "user_role" не існує, пропускаємо
-2023-12-08T00:27:29.284+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-12-08T00:27:29.285+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблиця "registration" не існує, пропускається
-2023-12-08T00:27:29.287+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
-2023-12-08T00:27:29.287+02:00  WARN 17788 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблиця "user_role" не існує, пропускається
-2023-12-08T00:27:29.344+02:00  INFO 17788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-12-08T00:27:30.299+02:00  INFO 17788 --- [main] c.example.demo.config.MailConfiguration  : JavaMailSender initialized.
-2023-12-08T00:27:31.228+02:00  WARN 17788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-12-08T00:27:31.681+02:00  INFO 17788 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42095996, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3b3a3a92, org.springframework.security.web.context.SecurityContextHolderFilter@51d9479c, org.springframework.security.web.header.HeaderWriterFilter@2e03bb74, org.springframework.security.web.authentication.logout.LogoutFilter@48928b57, com.example.demo.security.JWTAuthenticationFilter@299ddfff, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@29088be1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@13346a64, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4af50246, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@65f36591, org.springframework.security.web.session.SessionManagementFilter@1c571162, org.springframework.security.web.access.ExceptionTranslationFilter@426bf2f2, org.springframework.security.web.access.intercept.AuthorizationFilter@eaa07bb]
-2023-12-08T00:27:32.083+02:00  INFO 17788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2023-12-08T00:27:32.104+02:00  INFO 17788 --- [main] com.example.demo.Demo2Application        : Started Demo2Application in 11.436 seconds (process running for 14.215)
-2023-12-08T00:36:14.160+02:00  INFO 17788 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-12-08T00:36:14.162+02:00  INFO 17788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-12-08T00:36:14.171+02:00  INFO 17788 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2023-12-20T12:58:48.327+02:00  INFO 9344 --- [main] com.example.demo.Demo2Application        : Starting Demo2Application using Java 17.0.2 with PID 9344 (C:\Users\legen\Desktop\demo2\target\classes started by Andrew in C:\Users\legen\Desktop\demo2)
+2023-12-20T12:58:48.358+02:00  INFO 9344 --- [main] com.example.demo.Demo2Application        : No active profile set, falling back to 1 default profile: "default"
+2023-12-20T12:58:50.386+02:00  INFO 9344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-20T12:58:50.504+02:00  INFO 9344 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interfaces.
+2023-12-20T12:58:51.641+02:00  INFO 9344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-12-20T12:58:51.659+02:00  INFO 9344 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-12-20T12:58:51.660+02:00  INFO 9344 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-12-20T12:58:51.885+02:00  INFO 9344 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-12-20T12:58:51.887+02:00  INFO 9344 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3123 ms
+2023-12-20T12:58:52.180+02:00  INFO 9344 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-20T12:58:52.334+02:00  INFO 9344 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-12-20T12:58:52.341+02:00  INFO 9344 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-12-20T12:58:52.635+02:00  INFO 9344 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-20T12:58:52.825+02:00  INFO 9344 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-12-20T12:58:52.848+02:00  INFO 9344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-12-20T12:58:53.330+02:00  INFO 9344 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2674d4f6
+2023-12-20T12:58:53.336+02:00  INFO 9344 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-12-20T12:58:54.078+02:00  INFO 9344 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-12-20T12:58:55.415+02:00  INFO 9344 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-20T12:58:55.460+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-20T12:58:55.461+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : відношення "user_role" не існує, пропускаємо
+2023-12-20T12:58:55.464+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-20T12:58:55.466+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблиця "registration" не існує, пропускається
+2023-12-20T12:58:55.468+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-12-20T12:58:55.468+02:00  WARN 9344 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : таблиця "user_role" не існує, пропускається
+2023-12-20T12:58:55.535+02:00  INFO 9344 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-20T12:58:56.507+02:00  INFO 9344 --- [main] c.example.demo.config.MailConfiguration  : JavaMailSender initialized.
+2023-12-20T12:58:57.505+02:00  WARN 9344 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-20T12:58:57.970+02:00  INFO 9344 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@45b2d17b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5243d730, org.springframework.security.web.context.SecurityContextHolderFilter@55c581e4, org.springframework.security.web.header.HeaderWriterFilter@1c09bb7a, org.springframework.security.web.authentication.logout.LogoutFilter@3e755d5f, com.example.demo.security.JWTAuthenticationFilter@1a4ae53d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@501b296a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6eae3730, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a7bd9a8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15afebcc, org.springframework.security.web.session.SessionManagementFilter@493250cf, org.springframework.security.web.access.ExceptionTranslationFilter@5bfdc92b, org.springframework.security.web.access.intercept.AuthorizationFilter@758655a9]
+2023-12-20T12:58:58.160+02:00  WARN 9344 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2023-12-20T12:58:58.409+02:00  INFO 9344 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-12-20T12:58:58.428+02:00  INFO 9344 --- [main] com.example.demo.Demo2Application        : Started Demo2Application in 10.974 seconds (process running for 20.767)
+2023-12-20T12:59:21.154+02:00  INFO 9344 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-20T12:59:21.155+02:00  INFO 9344 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-12-20T12:59:21.157+02:00  INFO 9344 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-12-20T13:00:08.265+02:00 ERROR 9344 --- [http-nio-8080-exec-3] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: user with username china not found
+2023-12-20T13:00:08.284+02:00 ERROR 9344 --- [http-nio-8080-exec-3] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: Full authentication is required to access this resource
+2023-12-20T13:35:43.101+02:00 ERROR 9344 --- [http-nio-8080-exec-7] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: user with username china not found
+2023-12-20T13:35:43.105+02:00 ERROR 9344 --- [http-nio-8080-exec-7] c.e.demo.security.JwtAuthEntryPoint      : Authentication failed: Full authentication is required to access this resource
+2023-12-20T17:01:40.864+02:00  INFO 9344 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-20T17:01:41.003+02:00  INFO 9344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-12-20T17:01:41.401+02:00  INFO 9344 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
